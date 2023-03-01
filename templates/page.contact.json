@@ -1,0 +1,100 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "16280864582c16a35d": {
+      "type": "index-divider",
+      "settings": {
+        "section_view": "container",
+        "type_value": "vw",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_vw": 1.8,
+        "padding_bottom_vw": 1.9,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "",
+        "tablet_padding_top": 25,
+        "tablet_padding_bottom": 25,
+        "tablet_margin_top": 0,
+        "tablet_margin_bottom": 0
+      }
+    },
+    "162807025980cf87c6": {
+      "type": "section-contact",
+      "blocks": {
+        "162807025980cf87c6-0": {
+          "type": "info",
+          "settings": {
+            "width": "6",
+            "bg_block": "#ffffff",
+            "inset_block_desktop": "0px 15% 0px 0px",
+            "inset_block_mobile": "0px 0px 0px 0px",
+            "use_separatorline_desktop": false,
+            "item_info_title": "We’re here to help you!",
+            "item_info_text": "Have a question, comment, or brilliant idea you'd like to share? Send us a little note below - we love to hear from you and will always reply!",
+            "phone_title": "Phone Number",
+            "phone_text": "",
+            "phone_text_info": "<p>Call Us: <\/p>",
+            "email_title": "Email:",
+            "email_text": "fityet.store@gmail.com",
+            "location_title": "Location",
+            "location_text": "",
+            "time_title": "Opening Hours",
+            "time_text": ""
+          }
+        },
+        "162807025980cf87c6-1": {
+          "type": "form",
+          "settings": {
+            "width": "6",
+            "use_separatorline_desktop": true,
+            "bg_block": "#ffffff",
+            "inset_block_desktop": "0px 0px 0px 15%",
+            "inset_block_mobile": "0px 0px 0px 0px",
+            "item_form_title": "Do you want to get in touch?",
+            "item_form_text": "Let us know how we can help you."
+          }
+        }
+      },
+      "block_order": [
+        "162807025980cf87c6-0",
+        "162807025980cf87c6-1"
+      ],
+      "settings": {
+        "container_width": "container",
+        "reset_indent": false,
+        "bg_section": "#ffffff",
+        "inset_section": "0px 0px 0px 0px",
+        "offset_section": "0px 0px 0px 0px"
+      }
+    },
+    "1628085862e711714b": {
+      "type": "index-divider",
+      "settings": {
+        "section_view": "container",
+        "type_value": "vw",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_vw": 2,
+        "padding_bottom_vw": 2.1,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "background_color": "",
+        "tablet_padding_top": 25,
+        "tablet_padding_bottom": 24,
+        "tablet_margin_top": 0,
+        "tablet_margin_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16280864582c16a35d",
+    "162807025980cf87c6",
+    "1628085862e711714b"
+  ]
+}

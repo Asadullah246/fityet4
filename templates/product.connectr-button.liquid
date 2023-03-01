@@ -1,0 +1,25 @@
+{% layout none %}
+{%- capture contentForQuerystring -%}{{ content_for_header }}{%- endcapture -%}
+{%- assign page_url = contentForQuerystring | split:'"pageurl":"' | last | split:'"' | first | split:'.myshopify.com' | last |   replace:'\/','/' |    replace:'%20',' ' |    replace:'\u0026','&'  -%}
+{%- assign param_page = '' -%}
+{%- for i in (1..1) -%}
+	{%- unless page_url contains "?" -%}{% break %}{%- endunless -%}
+	{%- assign query_string = page_url | split:'?' | last -%}
+	{%- assign qry_parts= query_string | split:'&' -%}
+	{%- assign checkcon = 0 -%}
+	{%- for part in qry_parts -%}
+		{%- assign key_and_value = part | split:'==' -%}
+		{%- if key_and_value.size > 1 -%}
+			{% if key_and_value[0] == 'cclasses' %}
+				{%- assign cclasses = key_and_value[1] | default: '' -%}
+			{% endif%}
+			{% if key_and_value[0] == 'cstyle' %}
+				{%- assign cstyle = key_and_value[1] | default: '' -%}
+			{% endif%}
+		{%- endif -%}
+	{%- endfor -%}
+	{%- assign appbutton = shop.metafields.connectr.appbutton | default: 0 -%}
+	{%- if appbutton == 0 -%}
+		{% render 'connectr-custom-render',product:product,c_showConnectr:1,c_hideCart:0,c_classes:cclasses,c_imgbtn:0, c_btn :,c_style:cstyle %}
+	{%- endif -%}
+{%- endfor -%}

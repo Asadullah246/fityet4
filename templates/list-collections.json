@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-collections-listing",
+      "blocks": {
+        "db14814e-a3d8-4e47-88c3-c61cd0154aad": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ban-5.jpg",
+            "collection": "bedroom",
+            "custom_collection_class": ""
+          }
+        },
+        "c0e7e9c5-50bb-4f8b-a245-954254146c1e": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-5.jpg",
+            "collection": "dining-room",
+            "custom_collection_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "db14814e-a3d8-4e47-88c3-c61cd0154aad",
+        "c0e7e9c5-50bb-4f8b-a245-954254146c1e"
+      ],
+      "settings": {
+        "page_description": "",
+        "size": "4",
+        "style": "type_1",
+        "caption_bg_color": "rgba(0,0,0,0)",
+        "caption_bg_color_opacity": 0,
+        "inverted": false,
+        "img_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

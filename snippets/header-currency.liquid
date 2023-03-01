@@ -1,0 +1,27 @@
+
+  {%- if localization.available_countries.size > 1 -%}
+    <localization-form>
+      {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+        <div class="no-js-hidden">
+          <div class="disclosure currency-selector-box">
+            <button type="button"  class="disclosure__button currency_active localization-form__select localization-selector" aria-expanded="false" aria-controls="HeaderCountryList" aria-describedby="HeaderCountryLabel">
+               {% if settings.show_symbol %} {{ localization.country.currency.symbol }} {% endif %} {% if settings.show_iso_code %}{{ localization.country.currency.iso_code }}{% endif %} {% if settings.show_name %}({{ localization.country.name }}){% endif %}
+            </button>
+            <ul id="HeaderCountryList" role="list" class="disclosure__list currency_selector" hidden>
+              {%- for country in localization.available_countries -%}
+                <li class="disclosure__item" tabindex="-1">
+                  <a class="disclosure__link{% if country.iso_code == localization.country.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
+                     <span class="localization-form__currency"> {% if settings.show_symbol %}{{ country.currency.symbol }}{% endif %} {% if settings.show_iso_code %}{{ country.currency.iso_code }}{% endif %} {% if settings.show_name %}({{ country.name }}){% endif %}</span>
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+          <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+        </div>
+      {%- endform -%}
+    </localization-form>
+  {%- endif -%}
+
+  
+  

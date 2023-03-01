@@ -1,0 +1,62 @@
+{
+  "sections": {
+    "main": {
+      "type": "template-product",
+      "blocks": {
+        "66a177fb-db72-4eaa-8569-d9c669955756": {
+          "type": "all_tab",
+          "settings": {
+            "title": "Product details",
+            "page": "product-details"
+          }
+        },
+        "1570618849665": {
+          "type": "reviews",
+          "settings": {
+            "title": "Reviews"
+          }
+        },
+        "1524829489002": {
+          "type": "all_tab",
+          "settings": {
+            "title": "Delivery Info",
+            "page": "delivery-info"
+          }
+        }
+      },
+      "block_order": [
+        "66a177fb-db72-4eaa-8569-d9c669955756",
+        "1570618849665",
+        "1524829489002"
+      ],
+      "settings": {
+        "product_view_type": "carousel-big",
+        "pr_image_ratio": "portrait",
+        "product_description_type": "tab-content",
+        "use_pg_sticky": true,
+        "pg_itemview": 5,
+        "pg_spacebi": 10,
+        "pg_pag": true,
+        "pg_nav": true,
+        "pg_fraction": true,
+        "pg_thumbshide": false,
+        "pg_itembigview": 3,
+        "pg_spacebbigi": 0,
+        "pg_spacebtilei": 10,
+        "use_filter_color_thumbs": false,
+        "pg_tileitemview": 4,
+        "use_more_image": false,
+        "pg_simpletile": "5",
+        "pg_zoom": false,
+        "pg_zoom_levelscale": 1.4,
+        "pg_modalgallery": true,
+        "pg_modal_mainthumb": "rectangle",
+        "pg_modalthumb_w": 68,
+        "pg_modalthumb_h": 85
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,15 @@
+
+<div id="main-collection-product-grid" data-id="{{ section.id }}">
+  <div class="row product_listing__main custom_pagination_list product_listing__grid sidebar-row" id="product_listing__sorted" data-paginate-by="{{ paginate_by }}">
+    {% for product in collection.products %}
+      <div class="{{ item_class }} product_item_wrap">
+        {% include 'product-listing-item' %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{%- if paginate.pages > 1 -%}
+  {% assign pagination_items = 'layout.pagination.products' | t %}
+  {% include 'snippet-pagination' with pagination_items %}
+{%- endif -%}

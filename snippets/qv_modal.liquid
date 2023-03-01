@@ -1,0 +1,52 @@
+
+  <div id="product_quick_view" style="display: none;">
+    <div class="product_quick_wrapper row">
+      <div class="quick_view__left col-12 col-md-7 col-lg-6 mb-3 mb-md-0">
+        <div id="img_big" class="swiper-container">
+          <div class="swiper-wrapper"></div>
+          <div id="quick_view_gallery_pagination" class="swiper-pagination"></div>
+          <div id="prev_quick_view_gallery" class="swiper-button-prev"></div>
+          <div id="next_quick_view_gallery" class="swiper-button-next"></div>
+        </div>
+      </div>
+      <div class="quick_view__right col-12 col-md-5 col-lg-6">
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="product-actions" class="quick_view_form">
+          
+          <div id="quick_view__availability"></div>
+          
+          <h5 id="quick_view__name"></h5>
+          <div id="quick_view__price" class="product-price-container"></div>
+          
+          <div id="quick_view_colors" class="color_product__options"></div>
+          
+          <div id="quick_view_size" class="size_product__options"></div>
+          
+          <p id="quick_view__variants">
+            <label for="">{{ 'layout.product.options' | t }}:</label>
+            <select id="product-select" name="id" class="hidden"></select>
+          </p>
+          <div id="quick_view__form" class="mt-2">
+            <label for="">{{ 'layout.product.quantity' | t }}: </label>
+            <div class="quantity_box">
+              <input min="1" class="form-control quantity_input" type="text" name="quantity" value="1" />
+              <div class="quantity_modifier quantity_up">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.41699 6.41699V2.91699H7.58366V6.41699H11.0837V7.58366H7.58366V11.0837H6.41699V7.58366H2.91699V6.41699H6.41699Z" fill="#797B7E"/></svg>
+              </div>
+              <div class="quantity_modifier quantity_down">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.91699 6.41699H11.0837V7.58366H2.91699V6.41699Z" fill="#797B7E"/></svg>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-gradient btn-add-to-cart icon-svg w-100 mt-3" type="submit" id="quick_view__add">
+              <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.05518 8V6C7.05518 4.67392 7.58169 3.40215 8.51888 2.46447C9.45608 1.52678 10.7272 1 12.0526 1C13.378 1 14.6491 1.52678 15.5863 2.46447C16.5235 3.40215 17.05 4.67392 17.05 6V8H20.0484C20.3135 8 20.5677 8.10536 20.7552 8.29289C20.9426 8.48043 21.0479 8.73478 21.0479 9V21C21.0479 21.2652 20.9426 21.5196 20.7552 21.7071C20.5677 21.8946 20.3135 22 20.0484 22H4.05673C3.79165 22 3.53743 21.8946 3.34999 21.7071C3.16255 21.5196 3.05725 21.2652 3.05725 21V9C3.05725 8.73478 3.16255 8.48043 3.34999 8.29289C3.53743 8.10536 3.79165 8 4.05673 8H7.05518ZM7.05518 10H5.05621V20H19.049V10H17.05V12H15.051V10H9.05414V12H7.05518V10ZM9.05414 8H15.051V6C15.051 5.20435 14.7351 4.44129 14.1728 3.87868C13.6105 3.31607 12.8478 3 12.0526 3C11.2573 3 10.4947 3.31607 9.93236 3.87868C9.37004 4.44129 9.05414 5.20435 9.05414 6V8Z" fill="#FFFFFF"/>
+              </svg>
+              {{ 'layout.product.add_to_cart' | t }}
+            </button>
+          </div>
+        </form>
+        <div id="product_info_link">
+          <a href="#" class="link">{{ 'layout.product.view_info' | t }}</a>
+        </div>
+      </div>
+    </div>
+  </div>

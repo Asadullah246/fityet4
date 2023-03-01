@@ -1,0 +1,21 @@
+/**
+ * Section image with text column
+ */
+
+.section_image-with-text-column .image-item-wrapper {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+.section_image-with-text-column .h1 p{
+    font-weight: 300;
+    line-height: 75px;
+}
+
+.section_image-with-text-column .h1 p strong{
+    font-weight: 700;
+}
+
+.section_image-with-text-column .text-default p{
+    line-height: 27px;
+}
