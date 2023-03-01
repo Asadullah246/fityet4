@@ -9,8 +9,8 @@
 	.section-style-{{ section.id }} .caption {
 		padding: {{ section.settings.inset_caption }};
 	}
-	
-	
+
+
 	/* Style background */
 	{% if section.settings.use_bgimg  %}
 		.section-style-{{ section.id }}  .image-section-wrap {
@@ -22,10 +22,10 @@
 			background-color: {{ section.settings.caption_bg_color | color_modify: 'alpha', section.settings.caption_bg_color_opacity  }};
 		}
 	{% endif %}
-	
+
 	{% if section.blocks.size > 0 %}
 		{% for block in section.blocks %}
-	
+
 			.section-style-{{ section.id }} .item-{{ block.id }} {
 				margin:  {{ block.settings.offset_block }};
 			}
@@ -37,7 +37,7 @@
 					background-color: {{ block.settings.caption_bg_color | color_modify: 'alpha', block.settings.caption_bg_color_opacity  }};
 				{% endif %}
 			}
-	
+
 			@media (min-width: 768px)  {
 				.section-style-{{ section.id }} .item-{{ block.id }}{
 					text-indent: {{ block.settings.indent_block }};
@@ -51,7 +51,7 @@
 
 <div class="section-style-{{ section.id }}">
 	{%- include 'section-style' -%}
-	
+
 	<div class="{{ section.settings.container_width }}">
 		<div class="row flex-{{ section.settings.column_dir }} flex-md-nowrap justify-content-between {% if section.settings.reset_indent %}gx-0{% endif %}">
 			<div class="col-md-{{ section.settings.image_column }}">
@@ -170,7 +170,7 @@
 			],
 				"default":   "container"
 		},
-	
+
 		{
 			"type": "checkbox",
 			"id": "reset_indent",
@@ -195,7 +195,7 @@
 				}
 			]
 		},
-		
+
 		{
 			"type": "text",
 			"id": "inset_section",
@@ -223,7 +223,7 @@
 			"type": "header",
 			"content": "Image settings"
 		},
-	
+
 		{
 			"type": "image_picker",
 			"id": "image",
@@ -269,7 +269,7 @@
 					"value": "9",
 					"label": "75%"
 				}
-				
+
 			]
 		},
 
@@ -396,7 +396,7 @@
 			"label": "Inverted",
 			"default": false
 		},
-	
+
 		{
 			"type": "checkbox",
 			"id": "use_caption_bg",
@@ -427,7 +427,7 @@
 		}
 	],
 	"blocks": [
-	
+
 		// CUSTOM HEADING //////////////////////////////////////////////////////////////////////////////////////////
 		{
 			"type": "custom_heading",
@@ -439,14 +439,14 @@
 					"label": "Custom size heading",
 					"default": "<p>Custom Heading</p>"
 				},
-				
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#121212"
 				},
-	
+
 				{
 					"type": "text",
 					"id": "indent_block",
@@ -454,7 +454,7 @@
 					"default": "0",
 					"info": "Text indent: negative or positive value (px or %)"
 				},
-		
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -462,7 +462,7 @@
 					"default": "0 0 0 0",
 "info": 			"inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "offset_block",
@@ -473,10 +473,11 @@
 				{
 					"type": "checkbox",
 					"id": "use_bgi",
-					"label": "Use background caption item",
+					"label": "Use background caption item", 
+
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "caption_bg_color",
@@ -493,7 +494,7 @@
 				}
 			]
 		},
-	
+
 		// HEADER H1 //////////////////////////////////////////////////////////////////////////////////////////
 		{
 			"type": "heading_h1",
@@ -505,14 +506,14 @@
 					"label": "H1",
 					"default": "<p>Heading</p>"
 				},
-				
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#121212"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "indent_block",
@@ -520,7 +521,7 @@
 					"default": "0",
 					"info": "Text indent: negative or positive value (px or %)"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -528,7 +529,7 @@
 					"default": "0 0 0 0",
 "info": 			"inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "offset_block",
@@ -542,7 +543,7 @@
 					"label": "Use background caption item",
 					"default": false
 				},
-		
+
 				{
 					"type": "color",
 					"id": "caption_bg_color",
@@ -559,7 +560,7 @@
 				}
 			]
 		},
-	
+
 		// HEADER H2 //////////////////////////////////////////////////////////////////////////////////////////
 		{
 			"type": "heading_h2",
@@ -571,14 +572,14 @@
 					"label": "H2",
 					"default": "<p>Heading</p>"
 				},
-	
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#121212"
 				},
-	
+
 				{
 					"type": "text",
 					"id": "indent_block",
@@ -586,7 +587,7 @@
 					"default": "0",
 					"info": "Text indent: negative or positive value (px or %)"
 				},
-	
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -594,7 +595,7 @@
 					"default": "0 0 0 0",
 "info": 			"inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "offset_block",
@@ -608,7 +609,7 @@
 					"label": "Use background caption item",
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "caption_bg_color",
@@ -625,7 +626,7 @@
 				}
 			]
 		},
-	
+
 		// HEADER H3 //////////////////////////////////////////////////////////////////////////////////////////
 		{
 		"type": "heading_h3",
@@ -637,14 +638,14 @@
 					"label": "H3",
 					"default": "<p>Heading</p>"
 				},
-				
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#121212"
 				},
-	
+
 				{
 					"type": "text",
 					"id": "indent_block",
@@ -652,7 +653,7 @@
 					"default": "0",
 					"info": "Text indent: negative or positive value (px or %)"
 				},
-	
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -660,7 +661,7 @@
 					"default": "0 0 0 0",
 "info": 			"inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "offset_block",
@@ -674,7 +675,7 @@
 					"label": "Use background caption item",
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "caption_bg_color",
@@ -702,14 +703,14 @@
 					"label": "H4",
 					"default": "<p>Heading</p>"
 				},
-				
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#121212"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -717,7 +718,7 @@
 					"default": "0 0 0 0",
 "info": 			"inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "offset_block",
@@ -731,7 +732,7 @@
 					"label": "Use background caption item",
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "caption_bg_color",
@@ -748,7 +749,7 @@
 				}
 			]
 		},
-	
+
 		// HEADER H5 //////////////////////////////////////////////////////////////////////////////////////////
 		{
 			"type": "heading_h5",
@@ -760,14 +761,14 @@
 					"label": "H5",
 					"default": "<p>Heading</p>"
 				},
-				
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#121212"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -775,7 +776,7 @@
 					"default": "0 0 0 0",
 "info": 			"inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "offset_block",
@@ -789,7 +790,7 @@
 					"label": "Use background caption item",
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "caption_bg_color",
@@ -806,7 +807,7 @@
 				}
 			]
 		},
-	
+
 		// HEADER H6 //////////////////////////////////////////////////////////////////////////////////////////
 		{
 			"type": "heading_h6",
@@ -818,14 +819,14 @@
 					"label": "H6",
 					"default": "<p>Heading</p>"
 				},
-				
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#121212"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -833,7 +834,7 @@
 					"default": "0 0 0 0",
 "info": 			"inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "offset_block",
@@ -847,7 +848,7 @@
 					"label": "Use background caption item",
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "caption_bg_color",
@@ -864,7 +865,7 @@
 				}
 			]
 		},
-	
+
 		// SUBTITLE  //////////////////////////////////////////////////////////////////////////////////////////////
 		{
 		"type": "subtitle",
@@ -876,14 +877,14 @@
 					"label": "Subtitle",
 					"default": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<p>"
 				},
-				
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#797B7E"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -891,7 +892,7 @@
 					"default": "0 0 0 0",
 					"info": "inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 					{
 					"type": "text",
 					"id": "offset_block",
@@ -905,7 +906,7 @@
 					"label": "Use background caption item",
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "bgc_color",
@@ -934,7 +935,7 @@
 					"label": "Text",
 					"default": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<p>"
 				},
-	
+
 				{
 					"type": "select",
 					"id": "text_size",
@@ -955,14 +956,14 @@
 						}
 					]
 				},
-				
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#797B7E"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -970,7 +971,7 @@
 					"default": "0 0 0 0",
 					"info": "inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "offset_block",
@@ -984,7 +985,7 @@
 					"label": "Use background caption item",
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "caption_bg_color",
@@ -1001,7 +1002,7 @@
 				}
 			]
 		},
-	
+
 		// TIMER //////////////////////////////////////////////////////////////////////////////////////////
 		{
 			"type": "timer",
@@ -1013,14 +1014,14 @@
 					"label": "Time Deal",
 					"default": "2023-05-30T00:00:00"
 				},
-				
+
 				{
 					"type": "color",
 					"id": "color",
 					"label": "Color",
 					"default": "#121212"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -1028,7 +1029,7 @@
 					"default": "0 0 0 0",
 					"info": "inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-				
+
 				{
 					"type": "text",
 					"id": "offset_block",
@@ -1042,7 +1043,7 @@
 					"label": "Use background caption item",
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "caption_bg_color",

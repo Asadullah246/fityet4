@@ -1,5 +1,7 @@
 {{ 'section-banners.css' | asset_url | stylesheet_tag }}
 
+
+
 {% if section.blocks.size > 0 %}
 	<style>
 	{% for block in section.blocks %}
@@ -22,7 +24,7 @@
 			.section-style-{{ section.id }} .item-{{ block.id }}:focus .caption:before {
 				opacity: .5; }
 		{% endif %}
-	
+
 	{% if block.settings.use_bottom_offset_mobile %}
 		@media (max-width: 767px) {
 			.section-style-{{ section.id }} .item-{{ block.id }}{
@@ -30,7 +32,7 @@
 			}
 		}
 	{% endif %}
-	
+
 	/* Style block overlay */
 	{% if block.settings.off_overlay_mobile %}
 	@media (min-width: 768px) {
@@ -45,39 +47,39 @@
 	{% if block.settings.off_overlay_mobile %}
 	}
 	{% endif %}
-	
+
 	/* Style indent for elements */
     	@media (min-width:1200px){
         	.section-style-{{ section.id }} .item-{{ block.id }} .caption *:not(.btn) + .btn,
         	.section-style-{{ section.id }} .item-{{ block.id }} .caption *:not(.btn) + .link {
 				margin-top: {{ block.settings.margin_btn | append: 'px' }};
 			}
-			
+
 			.section-style-{{ section.id }} .item-{{ block.id }} .caption * + .block-title {
 				margin-top: {{ block.settings.margin_title | append: 'px' }};
 			}
-			
+
 			.section-style-{{ section.id }} .item-{{ block.id }} .caption * + .block-text{
 				margin-top: {{ block.settings.margin_text | append: 'px' }};
 			}
 		}
-	
+
 	.section-style-{{ section.id }} .item-{{ block.id }} .banner-caption:not(.inverted) .block-title {
 		color: {{ block.settings.color_title }};
 	}
-	
+
 	.section-style-{{ section.id }} .item-{{ block.id }} .banner-caption:not(.inverted) .custom_large_title.block-title {
 		color: {{ block.settings.color_ch }};
 	}
-	
+
 	.section-style-{{ section.id }} .item-{{ block.id }} .banner-caption:not(.inverted) .block-text{
 		color: {{ block.settings.color_text }};
 	}
-	
+
 	.section-style-{{ section.id }} .item-{{ block.id }} .banner-caption:not(.inverted) .block-subtitle{
 		color: {{ block.settings.color_subtitle }};
 	}
-	
+
 	{% endfor %}
 	</style>
 {% endif %}
@@ -85,16 +87,18 @@
 
 <div class="section-style-{{ section.id }}">
    {%- include 'section-style' -%}
-	
+
     <div class="{{ section.settings.container_width }}">
 
       {% if section.settings.section_title != blank %}
           <div class="section_heading h2">{{ section.settings.section_title }}</div>
       {% endif %}
-      
+
       {% if section.settings.section_title != blank %}
           <p class="text text-default">{{ section.settings.desc }}</p>
       {% endif %}
+
+
 
       <div class="row {% if section.settings.reset_indent %}gx-0{% endif %}">
           {% for block in section.blocks %}
@@ -124,7 +128,7 @@
 				{% when '12' %}
 				{%- assign item_width = 'col-lg-12' -%}
 			{% endcase %}
-		
+
 			  {% case block.settings.caption_size %}
 			  	{% when 'large'  %}
 			  		{%- assign subtitle_class = 'h6' -%}
@@ -143,8 +147,13 @@
 			  		{%- assign text_class = 'text-medium' -%}
 			  {% endcase %}
               <div class="col-12 {{ item_width }} {{ block.settings.custom_class }}" {{ block.shopify_attributes }}>
+
+			  {% comment %} banner section {% endcomment %}
+
+
+
                   <div class="banner-item item-{{ block.id }} style-{{ block.settings.banner_style }} d-flex flex-column {% if block.settings.reverse_cpos == 'flex-column-reverse' %} flex-md-column-reverse {% endif %}" style="padding: {{ block.settings.inset_block }}; {% if block.settings.use_bgb %}background-color: {{ block.settings.bgb_color | color_modify: 'alpha', block.settings.bgb_color_opacity  }};{% endif %}">
-					
+
 					  {% if block.settings.image != blank %}
                   		  {%- if block.settings.item_link != blank -%}
 							  <a class="image-item-container link_hover" href="{{block.settings.item_link}}">
@@ -175,19 +184,19 @@
                                    {% if block.settings.item_subtitle != blank %}
                                        <div class="{{ subtitle_class }} block-subtitle"><div class="caption-item">{{ block.settings.item_subtitle }}</div></div>
                                    {% endif %}
-								 
+
 								   {% if block.settings.custom_heading != blank %}
 								     <div class="custom_large_title block-title"><div class="caption-item">{{ block.settings.custom_heading }}</div></div>
 							       {% endif %}
-								
+
                                    {% if block.settings.item_title != blank %}
                                        <div class="{{ title_class }} block-title"><div class="caption-item">{{ block.settings.item_title }}</div></div>
                                    {% endif %}
-                                 
+
                                    {% if block.settings.item_text != blank %}
                                        <div class="{{ text_class }} block-text"><div class="caption-item">{{ block.settings.item_text }}</div></div>
                                    {% endif %}
-                                   
+
                                    {% if block.settings.link_text != blank and block.settings.item_link != blank %}
 									 {% if block.settings.btn_style == 'link-default' or block.settings.btn_style == 'link-primary' %}
 									   <a href="{{ block.settings.item_link }}" class="link{% if block.settings.btn_style == 'link-primary' %} link-primary{% else %} link-default{% endif %}">{{ block.settings.link_text }}</a>
@@ -204,6 +213,8 @@
       </div>
     </div>
 </div>
+
+
 
 {% schema %}
 
@@ -228,7 +239,7 @@
             "id": "desc",
             "label": "HTML / Description"
     	},
-		
+
 		{
 			"type":      "select",
 			"id":        "container_width",
@@ -277,16 +288,16 @@
    		}
 	],
 	"blocks": [
-		{ 
+		{
 			"type": "banner",
 			"name": "Banner",
 			"settings": [
-	
+
 				{
 					"type": "header",
 					"content": "Block settings"
 				},
-	
+
 				{
 					"type": "image_picker",
 					"id": "image",
@@ -366,21 +377,21 @@
 						}
 					]
 				},
-	
+
 				{
 					"type": "checkbox",
 					"id": "off_overlay_mobile",
 					"label": "Disable overlay on mobile",
 					"default": false
 				},
-	
+
 				{
 					"type": "checkbox",
 					"id": "use_bgb",
 					"label": "Use block background",
 					"default": false
 				},
-				
+
 				{
 					"type": "color",
 					"id": "bgb_color",
@@ -395,7 +406,7 @@
 					"label":     "Background block opacity",
 					"default":   0.5
 				},
-	
+
 				{
 					"type": "text",
 					"id": "inset_block",
@@ -403,14 +414,14 @@
 					"default": "0 0 0 0",
 					"info": "inset: Top Right Bottom Left (px/em/%/). Or use one value if all insets are equal"
 				},
-	
+
 				{
 					"type": "checkbox",
 					"id": "use_bottom_offset_mobile",
 					"label": "Use bottom offset on mobile",
 					"default": true
 				},
-	
+
 				{
 					"type": "range",
 					"id": "margin_bottom",
@@ -421,20 +432,20 @@
 					"label": "Bottom offset on mobile",
 					"default": 30
 				},
-	
-	
+
+
 				{
 					"type": "header",
 					"content": "Caption settings"
 				},
-	
+
 				{
 					"type": "checkbox",
 					"id": "use_bgo",
 					"label": "Use background",
 					"default": false
 				},
-	
+
 				{
 					"type": "color",
 					"id": "bg_color",
@@ -449,15 +460,15 @@
 					"label":     "Background opacity",
 					"default":   0.5
 				},
-	
-	
+
+
 				{
 					"type": "checkbox",
 					"id": "inverted",
 					"label": "Inverted",
 					"default": false
 				},
-	
+
 				{
 					"type": "select",
 					"id": "h_cpos",
@@ -476,7 +487,7 @@
 							"label": "Right position",
 							"value": "end"
 						}
-						
+
 					]
 				},
 
@@ -501,7 +512,7 @@
 						}
 					]
 				},
-				
+
 
 				{
 					"type": "select",
@@ -541,7 +552,7 @@
 						}
 					]
 				},
-	
+
 				{
 					"type": "richtext",
 					"id": "item_title",
@@ -572,20 +583,20 @@
 					"label": "Caption text",
 					"default": "<p>Caption text</p>"
 				},
-  
+
  				 {
  					"type": "color",
  					"id": "color_text",
  					"label": "Color",
  					"default": "#797B7E"
  				 },
-  
+
   				{
   					"type": "richtext",
   					"id": "custom_heading",
   					"label": "Custom size heading"
   				},
-	
+
 				{
 					"type": "color",
 					"id": "color_ch",
@@ -617,7 +628,7 @@
 						}
 					]
 				},
-	
+
 				{
 					"type": "text",
 					"id": "inset_caption",
@@ -719,7 +730,7 @@
 					"label": "Margin (something + title)",
 					"default": 22
 				},
-				
+
 				{
 					"type": "range",
 					"id": "margin_text",
@@ -730,7 +741,7 @@
 					"label": "Margin (something + text)",
 					"default": 15
 				},
-				
+
 				{
 					"type": "range",
 					"id": "margin_btn",
