@@ -2,6 +2,9 @@
 
 /* header banner  */
 
+/* .swiper-container-autoheight{
+    height: 100% !important;
+} */
 
 .section_slideshow .h1.block-title p strong{
     color: black;
@@ -47,18 +50,43 @@ border-radius: 35px;
 }
 
 /* main  */
+
+/* <a href="/collections/all" class="btn btn-primary btn-md" bis_skin_checked="1">Shop now</a> */
+
+#shopify-section-template--18057764241682__162789983429f786d4 > div.divider_item.d-none.d-lg-block.container{
+padding-top: 30px !important;
+}
 .section-style-template--18057764241682__164145554029689e88{
-    height: 490px !important;
-    padding-bottom: 30px; 
+    height: 460px !important;
+    /* padding-bottom: 30px; */
     overflow: hidden;
+}
+.image-item-wrapper{
+    height: 100% !important;
 }
 
 .image-item-wrapper img{
-    max-height: 95% !important;
+    height: 100% !important;
 }
 .section-style-template--18057764241682__164145554029689e88 .caption{
     padding: 2% 4% 0% 10% !important;
 }
+
+
+/* banner  */
+
+.buttonDiv{
+    background: #F63C25;
+}
+
+/* card  */
+
+/* .section_featured-products-tabs h5.section_heading{
+    font-weight: 900;
+    font-size: 2em;
+    font-family: ;
+
+} */
 
 
 /* footer  */
@@ -178,7 +206,34 @@ footer .contact_list  {
 
 /* footer media  */
 
+@media (max-width: 992px){
+    .image-item-wrapper{
+        height: 100% !important;
+    }
+
+    .image-item-wrapper img{
+        height: 100% !important;
+    }
+
+}
 @media (max-width: 767.98px){
+
+    .section-style-template--18057764241682__164145554029689e88{
+        height: fit-content !important;
+        /* padding-bottom: 30px; */
+        overflow: hidden;
+    }
+    .image-item-wrapper{
+        height: 100% !important;
+        width: 100% !important;
+    }
+    .image-item-wrapper img{
+        height: 100% !important;
+    }
+    .section_image-with-text-column .h1 p {
+        font-weight: 300;
+        line-height: 45px;
+    }
     footer .footer_block {
         border-bottom: none;
         border-top: none;
