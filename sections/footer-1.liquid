@@ -6,21 +6,27 @@
 
 <footer class="footer_type_1">
 	{% if section.settings.footer_newsletter %}
-		<div class="footer_item__newsletter">
-			
-			<div class="index_newsletter_wrapper{% if section.settings.offset-sm %} offset-sm{% endif %}"{% if section.settings.background_toggle %} style="background-color: {{ section.settings.bg_color }}"{% endif %}>
-				<div class="{% if section.settings.container_settings == 'container' %}container{% elsif section.settings.container_settings == 'full-width' %}full-width{% endif %}{% if section.settings.inverted %} inverted{% endif %}">
+		<div class="footer_item__newsletter"   >
+		<div id="newsletter" class=" index_newsletter_wrapper{% if section.settings.offset-sm %} offset-sm{% endif %}"{% if section.settings.background_toggle %} style="background-color: {{ section.settings.bg_color }}"{% endif %}>
+
+				<div  class=" {% if section.settings.container_settings == 'container' %}container{% elsif section.settings.container_settings == 'full-width' %}full-width{% endif %}{% if section.settings.inverted %} inverted{% endif %}">
 					<div class="row">
+
 						<div class="{% if section.settings.type_line %}col-12 type-line {% else %} text-center container container-770{% endif %}{% if section.settings.image_1 %} offset-md-1{% endif %}">
 							{% if section.settings.image_1 %}
+
 							<div class="d-sm-flex align-items-sm-center px-xl-5">
+
 								<div class="img-fluid mr-sm-2 mr-lg-4 d-none d-sm-block">
 									<img src="{{ section.settings.image_1 | img_url: img_size_base }}" class="img-fluid" alt="{{ section.settings.image_1.alt }}">
 								</div>
 								{% endif %}
 
+								{% comment %} newsletter section  {% endcomment %}
+
 								<div class="item__newsletter">
 									<div class="newsletter-info">
+
 										<p class="{% if section.settings.type_line %}h5 {% else %}h6 {% endif %}newsletter-title">
 											{{ section.settings.title | escape }}
 										</p>
@@ -28,10 +34,11 @@
 										{% if section.settings.text.size > 0 %}
 											<div class="{% if section.settings.type_line %}{% else %}h3 {% endif %}newsletter-description">
 												{{ section.settings.text }}
+
 											</div>
 										{% endif %}
 									</div>
-
+									{% comment %} <div>kdjsdsdfsdfkds</div> {% endcomment %}
 									{% include 'widget-newsletter' %}
 								</div>
 								{% if section.settings.image_1 %}
@@ -43,18 +50,29 @@
 			</div>
 		</div>
 	{% endif %}
-	<div class="container pt-md-7 pb-md-6 pb-2 px-md-0">
+	<div id="footerDown" class="container pt-md-7 pb-md-6 pb-2 px-md-0">
 		<div class="footer_main row justify-content-around">
 			{% if section.settings.footer_logo  %}
+
 				<div class="col-12 col-md-6 col-lg-4 without_toggle">
 				<div class="footer_block mb-4 mb-md-0 border-n">
-					{% if section.settings.footer_logo_slogan.size > 0 %}
+					{% comment %} <img src="../assets/logo.png" alt="" class="footerLogo"> {% endcomment %}
+					<h6 class="logoText">FITYET STORE</h6>
+					{% comment %} {% if section.settings.footer_logo_slogan.size > 0 %}
 						{% assign logo_slogan = section.settings.footer_logo_slogan | prepend:'<div class="footer-logo-slogan text">' | append:'</div>' %}
-					{% endif %}
-					{% assign logo_type = section.settings.footer_logo_type %}
-					{% assign logo_i = section.settings.footer_logo_main %}
-					{% assign logo_src = section.settings.footer_logo_main | img_url: footer_logo_size, crop:'center', scale: 2 %}
-					{% include 'logo-footer' slogan: logo_slogan, logo_t: logo_type, logo_image: section.settings.footer_logo_main, src: logo_src %}
+					{% endif %} {% endcomment %}
+					<p class="footerDesc">Are you looking for best-looking fitness clothing, most comfortable footwear, finest accessories and first-class nutrition and equipment? Why wait!!! Everything mentioned above and even more, you will find in this online store.</p>
+
+					<div class="location">
+						<img  src="../assets/location.png" alt="location">
+						<p>GymVast, 18 East 50th Street, 4th Floor, <br> New York, NY 10022</p>
+					</div>
+					<div class="phone">
+						<img  src="../assets/call.png" alt="phone">
+						<p>65 094 778 622</p>
+					</div>
+				 {% comment %} {% assign logo_type = section.settings.footer_logo_type %}
+					{% assign logo_i = section.settings.footer_logo_main %} {% endcomment %}
 					{% if section.settings.contacts %}
 						<ul class="contact_list">
 						{% if section.settings.phone.size > 0 %}
@@ -69,7 +87,7 @@
 						{% endif %}
 						{% if section.settings.email.size > 0 %}
 							<li>
-								<a class="contact_email" href="mailto:{{ section.settings.email }}">
+								<a id="sendEmail" class="contact_email" href="mailto:{{ section.settings.email }}">
 									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M3 3H21C21.2652 3 21.5196 3.10536 21.7071 3.29289C21.8946 3.48043 22 3.73478 22 4V20C22 20.2652 21.8946 20.5196 21.7071 20.7071C21.5196 20.8946 21.2652 21 21 21H3C2.73478 21 2.48043 20.8946 2.29289 20.7071C2.10536 20.5196 2 20.2652 2 20V4C2 3.73478 2.10536 3.48043 2.29289 3.29289C2.48043 3.10536 2.73478 3 3 3ZM20 7.238L12.072 14.338L4 7.216V19H20V7.238ZM4.511 5L12.061 11.662L19.502 5H4.511Z" />
 									</svg>
@@ -90,14 +108,14 @@
 						{%- assign linklist = block.settings.links -%}
 						<div class="col-12 col-md-6{% if forloop.first == true %} border-t{% endif %}{% if block.settings.column_item == 'column_2' %} col-lg-2{% elsif block.settings.column_item == 'column_3' %} col-lg-3{% elsif block.settings.column_item == 'column_4' %} col-lg-4{% elsif block.settings.column_item == 'column_5' %} col-md-5{% elsif block.settings.column_item == 'column_6' %} col-lg-6{% else %} col-lg-3{% endif %} footer_block">
 							<div class="footer_item footer_item__links{% if block.settings.custom_class.size > 0 %} {{ block.settings.custom_class }}{% endif %}">
-								<h6 class="linklist_footer_title toggle-mobile mb-3">
+								<h6 id="linkHeader" class="linklist_footer_title toggle-mobile mb-3">
 									{{ linklists[linklist].title }}
 									<svg class="d-md-none" width="9" height="6" viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg"><path d="M9 1.5L7.5 0L4.5 3L1.5 0L0 1.5L4.5 6L9 1.5Z" /></svg>
 								</h6>
 								<ul class="link_list content-toggle-mobile">
 									{% for link in linklists[linklist].links %}
 										<li>
-											<a {% if link.active %}class="active"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
+											<a id="footerLink" {% if link.active %}class="active"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
 										</li>
 									{% endfor %}
 								</ul>
